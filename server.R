@@ -23,7 +23,7 @@ shinyServer(function(input, output) {
   output$liftJulio<-renderPrint({
     x<-input$select
     y<-input$select2
-    paste("Lift",round(round(a_matrix_Julio[x,y], digits=4)/(round(a_matrix_Julio[x,x], digits=4)*round(a_matrix_Julio[y,y], digits=4)), digits=4))
+    paste("Lift",round(round(a_matrix_Julio[x,y]/a_matrix_Julio[x,x], digits=4)/round(a_matrix_Julio[y,y], digits=4), digits=4))
   })
   
   output$tablanamecat1Julio<-renderText({
